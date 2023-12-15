@@ -5,25 +5,20 @@ const NavBar = ({ user, setUser }) => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "lightblue", padding:"20px"}}>
         <a className="navbar-brand" href="/">
-          Aplicación Web {""}
+          Eventual {""}
         </a>
 
         {user && (
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/main">
-                  Página principal
-                </a>
-              </li>
-              <li className="nav-item">
                 <a className="nav-link" href="/map">
-                  Mapa
+                  Cerca de ti
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/new-image">
-                  Nueva imagen
+                <a className="nav-link" href="/new-event">
+                  Nuevo evento
                 </a>
               </li>
               <li className="nav-item">

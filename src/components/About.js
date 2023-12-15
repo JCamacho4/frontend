@@ -10,8 +10,21 @@ const MainPage = ({ user, setUser, server, validateToken }) => {
     }, []);
 
     return (
-        <div className="app-container">
-            <h1> Aplicación web desarrollada</h1>
+        <div className="app-container" style={{marginTop:50}}>
+            <h1> Eventual </h1>
+            <p> Con esta aplicación podras obtener información 
+                sobre eventos de todo tipo que esten cerca de ti</p>
+
+            <h3> Podrás: </h3>
+            <ul>
+                <li> Ver eventos próximos indicando tu dirección postal </li>
+                <li> Crear tus propios eventos, modificarlos y borrarlos </li>
+            </ul>
+
+            <p>
+                Accede a las diferentes secciones en la barra de navegación
+                superior.
+            </p>
 
     
             

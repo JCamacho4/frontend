@@ -5,20 +5,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import "./assets/css/App.css";
 
-import MainPage from "./components/MainPage.js";
 import axios from "axios";
 import MapPage from "./components/MapPage.js";
 import NavBar from "./components/Navbar.js";
-import NewImage from "./components/NewImage.js";
+import NewEvent from "./components/NewEvent.js";
 import MyProfile from "./components/MyProfile.js";
 import About from "./components/About.js";
+import EventPage from "./components/EventPage.js";
+
 
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // const server = "http://localhost:5000";
-  const server = "https://backend-rho-eosin-74.vercel.app"
+  const server = "http://localhost:5000";
+  // const server = "https://backend-rho-eosin-74.vercel.app"
 
   const validateTokenGoogle = async (token) => {
     try {
@@ -90,26 +91,7 @@ function App() {
             ))
           }
         />
-        <Route
-          path="/main"
-          element={
-            !loading &&
-            (user ? (
-              <MainPage
-                user={user}
-                setUser={setUser}
-                validateToken={validateTokenBackend}
-                server={server} />
-            ) : (
-              <Login
-                user={user}
-                setUser={setUser}
-                validateToken={validateTokenGoogle}
-                server={server}
-              />
-            ))
-          }
-        />
+
         <Route
           path="/map"
           element={
@@ -122,9 +104,9 @@ function App() {
           }
         />
         <Route
-          path="/new-image"
+          path="/new-event"
           element={
-            <NewImage
+            <NewEvent
               user={user}
               setUser={setUser}
               validateToken={validateTokenBackend}
@@ -152,7 +134,26 @@ function App() {
             ))
           }
         />
-
+        <Route
+          path="/evento/:id"
+          element={
+            !loading &&
+            (user ? (
+              <EventPage
+                user={user}
+                setUser={setUser}
+                server={server}
+                validateToken={validateTokenBackend} />
+            ) : (
+              <Login
+                user={user}
+                setUser={setUser}
+                validateToken={validateTokenGoogle}
+                server={server}
+              />
+            ))
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
