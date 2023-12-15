@@ -69,7 +69,7 @@ function NewEvent({ user, setUser, validateToken, server }) {
 
         // Subir solamente la primera imagen del array de imagenes, si es que no se ha indicado imagenURI
 
-        if(!imagenURI){
+        if(imageFiles.length > 0){
             const file = imageFiles[0];
             const formData = new FormData();
             formData.append("image", file);
@@ -95,7 +95,7 @@ function NewEvent({ user, setUser, validateToken, server }) {
             await axios.put(
                 server + "/eventos/" + id,
                 {
-                    image: response2.data.result.secure_url
+                    imagen: response2.data.result.secure_url
                 },
                 {
                     headers: {
