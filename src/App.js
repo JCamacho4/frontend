@@ -18,8 +18,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const server = "http://localhost:5000";
-  // const server = "https://backend-rho-eosin-74.vercel.app"
+  // const server = "http://localhost:5000";
+  const server = "https://backend-rho-eosin-74.vercel.app"
 
   const validateTokenGoogle = async (token) => {
     try {
