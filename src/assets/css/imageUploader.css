@@ -1,0 +1,49 @@
+.dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  width: 50%;
+}
+
+.dropzone p {
+  margin: 0;
+}
+
+.dropzone::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.image-preview {
+  position: relative;
+  margin: 5px;
+}
+
+.preview-image {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
